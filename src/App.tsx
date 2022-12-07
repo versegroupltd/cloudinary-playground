@@ -17,6 +17,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className='App'>
+      <a href='/'>Home</a>
       <RouterProvider router={router} />
     </div>
   );
