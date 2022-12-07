@@ -6,13 +6,8 @@
 
 ## Not needed for static site generators.
 [[redirects]]
-  from = "/image-builder.png"
-  to = "/.netlify/functions/image-builder"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/image-badge-builder.png"
+  to = "/.netlify/functions/image-badge-builder"
   status = 200
 
 ## (optional) Settings for Netlify Dev

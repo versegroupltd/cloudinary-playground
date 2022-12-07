@@ -1,6 +1,6 @@
-import { Handler } from '@netlify/functions';
-import fetch from 'node-fetch';
-const cloudinary = require('cloudinary');
+import { Handler } from "@netlify/functions";
+import fetch from "node-fetch";
+const cloudinary = require("cloudinary");
 
 /**
  * See https://michaelheap.com/netlify-function-lambda-return-image/
@@ -16,14 +16,13 @@ cloudinary.config({
 });
 
 const handlerFn: Handler = async (event, context) => {
-  console.log(event);
   const { name, role, company } = event.queryStringParameters as {
     name: string;
     role?: string;
     company?: string;
   };
 
-  const image = await cloudinary.url('ondemand-badge/summit-badge.png', {
+  const image = await cloudinary.url("ondemand-badge/summit-badge.png", {
     transformation: [
       {
         width: 369,
@@ -31,37 +30,37 @@ const handlerFn: Handler = async (event, context) => {
       },
       {
         overlay: {
-          font_family: 'Montserrat',
+          font_family: "Montserrat",
           font_size: 16,
-          font_weight: 'bold',
+          font_weight: "bold",
           text: name,
         },
-        gravity: 'north_west',
-        color: 'black',
+        gravity: "north_west",
+        color: "black",
         x: 52,
         y: 423,
       },
       {
         overlay: {
-          font_family: 'Montserrat',
+          font_family: "Montserrat",
           font_size: 16,
-          font_weight: 'regular',
-          text: role || ' ',
+          font_weight: "regular",
+          text: role || " ",
         },
-        gravity: 'north_west',
-        color: 'black',
+        gravity: "north_west",
+        color: "black",
         x: 52,
         y: 468,
       },
       {
         overlay: {
-          font_family: 'Montserrat',
+          font_family: "Montserrat",
           font_size: 16,
-          font_weight: 'regular',
-          text: company || ' ',
+          font_weight: "regular",
+          text: company || " ",
         },
-        gravity: 'north_west',
-        color: 'black',
+        gravity: "north_west",
+        color: "black",
         x: 52,
         y: 495,
       },
@@ -74,11 +73,11 @@ const handlerFn: Handler = async (event, context) => {
   return {
     statusCode: 200,
     headers: {
-      'Content-Type': 'image/png',
-      'Content-Disposition': `filename="image-builder.png"`,
-      'Access-Control-Allow-Origin': '*',
+      "Content-Type": "image/png",
+      "Content-Disposition": `filename="image-builder.png"`,
+      "Access-Control-Allow-Origin": "*",
     },
-    body: imageBuffer.toString('base64'),
+    body: imageBuffer.toString("base64"),
     isBase64Encoded: true,
   };
 };

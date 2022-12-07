@@ -1,25 +1,25 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './App.css';
-import HomePage from './pages/home';
-import ImageBuilderPage from './pages/ImageBuilder';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import Layout from "./components/Layout";
+import BadgeBuilderPage from "./pages/BadgeBuilder";
+import HomePage from "./pages/home";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomePage />,
   },
   {
-    path: '/image-builder',
-    element: <ImageBuilderPage />,
+    path: "/badge-builder",
+    element: <BadgeBuilderPage />,
   },
 ]);
 
 function App() {
   return (
-    <div className='App'>
-      <a href='/'>Home</a>
+    <Layout>
       <RouterProvider router={router} />
-    </div>
+    </Layout>
   );
 }
 
