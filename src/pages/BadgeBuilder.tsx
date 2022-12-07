@@ -9,7 +9,7 @@ const BadgeBuilderPage = () => {
     const role = event.target.elements.role.value;
     const company = event.target.elements.company.value;
     setImageUrl(
-      `/image-builder.png?name=${name}&role=${role}&company=${company}`
+      `/badge-builder.png?name=${name}&role=${role}&company=${company}`
     );
   };
 
