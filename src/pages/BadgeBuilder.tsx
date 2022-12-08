@@ -66,15 +66,11 @@ const BadgeBuilderPage = () => {
             </div>
           ))}
 
-          {/* < type="submit" className="bg-gray-100 py-1 px-2 text-gray-900">
-            Submit
-          </> */}
-
           <button
             type="submit"
             className="group inline-flex rounded-md border border-transparent bg-indigo-500 py-2 px-4 text-base font-medium text-white hover:bg-opacity-75"
           >
-            Verse website
+            Submit
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
